@@ -29,6 +29,24 @@ function borrarContacto(id) {
 
 borrarContacto(5);
 
+
+function actualizarContacto(id, nombres, apellidos) {
+  const indice = listaContactos.findIndex((contacto) => contacto.id === id);
+  if (indice !== -1) {
+    listaContactos[indice].nombres = nombres;
+    listaContactos[indice].apellidos = apellidos;
+    console.log(`Contacto actualizado correctamente.`);
+  } else {
+    console.log(`El contacto con ID ${id} no existe en la lista.`);
+  }
+}
+
+
+actualizarContacto(3, "Nicolás", "García Pérez");
+
+
+
+
 function imprimirContactos() {
   console.log("Contactos en la lista:");
   for (let i = 0; i < listaContactos.length; i++) {
